@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>tricks</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<p onclick="makeGreen()">Break Green</p>
+
+<script>
+const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+function makeGreen(){
+const p= document.querySelector('p');
+p.style.color='#BADA55';
+p.style.fontSize='50px';
+}
+
+console.log('hello');
+console.log('hello i am %s string!','pop');
+console.log('%c i am great text','font-size:50px ;background:red;text-shadow:10px 10px 0 blue;');
+console.warn('you have not intialized the const');
+console.error('you have not intialized the const');
+console.info('sun is a star');
+
+console.assert(10===1,'That is wrong');
+
+console.clear();
+const p=document.querySelector('p');
+console.log(p);
+console.dir(p);
+console.clear();
+
+dogs.forEach(dog=>{
+	console.groupCollapsed(`${dog.name}`);
+	console.log(`Hi,This is ${dog.name}`);
+	console.log(`${dog.name} is ${dog.age} years old`);
+	console.groupEnd(`${dog.name}`);
+});
+console.count('hie');
+console.count('no');
+console.count('no');
+console.count('no');
+console.count('no');
+console.count('hie');
+console.count('no');
+
+console.time('fetching data');
+fetch('https://github.com/nitishdayal/JavaScript30/blob/master/exercises/09%20-%20Dev%20Tools%20Domination/index.html')
+.then(data=> data.html())
+.then(data =>{
+	console.timeEnd('fetching data');
+	console.log(data);
+});
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

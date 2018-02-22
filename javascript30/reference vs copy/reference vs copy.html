@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>reference vs copy</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+let age=100;
+let age2=age;
+console.log(age,age2);
+age=200;
+console.log(age,age2);
+
+// let name='wes';
+// let name2=name;
+// console.log(name,name2);
+// name='wesley';
+// console.log(name,name2);
+//lets say we have an array
+const player=['wes','sarah','ryan','poppy'];
+//and we want to make a copy of it.
+const team=player;
+console.log(player,team);
+// team[3]='Lux';
+const team2=player.slice();
+const team3=[].concat(player);
+const team4=[...player];
+team4[3]='hee haa';
+console.log(team4);
+const team5= Array.from(player)
+const person={
+	name:'albert einstein',
+	age:67
+};
+
+const cap2=Object.assign({},person,{number:11,age:89});
+console.log(cap2);
+
+const wes={
+name:'Wes',
+age:100,
+social:{
+	twitter:'@wesbos',
+	facebook:'wesbos.developer'
+}
+}
+console.clear();
+console.log(wes);
+
+const dev=Object.assign({},wes);
+
+const dev2=JSON.parse(JSON.stringify(wes));
+
+
+</script>
+</body>
+</html>

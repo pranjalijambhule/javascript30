@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>variables</title>
+</head>
+<body>
+<h2>Pranjali Jambhule<span class='h1'>Sovi Spark</span></h2>
+<div class="controls">
+<label for="spacing">Spacing:</label>
+<input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+
+
+<label for="blur">Blur:</label>
+<input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+<label for="base">Base Color</label>
+<input type="color" name="base" value="#ffc600">
+</div>
+<img src="https://1.bp.blogspot.com/-5bPNsF5plzw/VnJWs-7RbrI/AAAAAAAARmA/DaZmn8YUjAk/s1600-r/logo_research_at_google_color_1x_web_512dp.png">
+
+
+<style>
+:root{
+	--base:yellow;
+	--spacing:10px;
+	--blur:10px;
+}
+img{
+	padding: var(--spacing);
+	background:var(--base);
+	filter:blur(var(--blur));
+}
+.h1{
+	color: var(--base);
+}
+
+
+
+
+body{
+	text-align:center;
+}
+body{
+    background-color:#193549;
+    color:white;
+    font-family:'helvetica neue',sans-serif;
+font-weight:100;
+font-size: 50px;
+}
+.controls{
+	margin-bottom:50px;
+}
+a{
+	color: var(--base);
+	text-decoration:none;
+}
+input{
+	width:100px;
+}
+
+</style>
+<script>
+const inputs=document.querySelectorAll('.controls input');
+
+function handleUpdate(){
+	const suffix= this.dataset.sizing || ' ';
+	document.documentElement.style.setProperty(`--${this.name}`,this.value+ suffix);
+}
+inputs.forEach(input=>input.addEventListener('change',handleUpdate));
+inputs.forEach(input=>input.addEventListener('mousemove',handleUpdate));
+
+</script>
+
+
+</body>
+</html>
